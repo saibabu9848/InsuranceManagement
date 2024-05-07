@@ -7,7 +7,7 @@ node{
         mavenHome = tool name: 'maven' , type: 'maven'
         mavenCMD = "${mavenHome}/bin/mvn"
         tag="3.0"
-	dockerHubUser="anujsharma1990"
+	dockerHubUser="snapper36"
 	containerName="insure-me"
 	httpPort="8081"
     }
@@ -45,7 +45,7 @@ node{
 	
     stage('Publishing Image to DockerHub'){
         echo 'Pushing the docker image to DockerHub'
-        withCredentials([usernamePassword(credentialsId: 'dockerHubAccount', usernameVariable: 'dockerUser', passwordVariable: 'dockerPassword')]) {
+        withCredentials([usernamePassword(credentialsId: 'dockerHubAccount', usernameVariable: 'snapper36', passwordVariable: 'Gutta@9848')]) {
 			sh "docker login -u $dockerUser -p $dockerPassword"
 			sh "docker push $dockerUser/$containerName:$tag"
 			echo "Image push complete"
